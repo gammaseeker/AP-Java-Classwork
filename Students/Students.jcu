@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace_user>
+	<active_project>
+		<label>Students</label>
+	</active_project>
+	<projects>
+		<project>
+			<label>Students</label>
+			<showfiles>false</showfiles>
+		</project>
+	</projects>
+	<open_files>
+		<docitem>
+			<path>Students.java</path>
+			<source>true</source>
+			<index>0</index>
+			<active>true</active>
+		</docitem>
+		<docitem>
+			<path>..\..\Fall 2012-Spring 2013\AP Java\Students\StudentInput.java</path>
+			<source>true</source>
+			<index>1</index>
+			<active>false</active>
+		</docitem>
+	</open_files>
+</workspace_user>
