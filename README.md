@@ -1,2 +1,2 @@
 # AP-Java-Classwork
-haha
+Various projects I have done to learn and deepen my understanding of Java
