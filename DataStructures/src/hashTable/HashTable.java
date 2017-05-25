@@ -4,39 +4,50 @@ import java.util.*;
 public class HashTable {
 	
 	private LinkedList<Integer>[] hashTable;
-	public int m = 11;
-	public final double A = (Math.sqrt(5) - 1)/2;
-	
-	@SuppressWarnings("unchecked")
+	private int capacity = 11;
+	private int m = 3;
+	@SuppressWarnings("unchecked")//Tells compiler to trust programmer, everything will compile
 	public HashTable()
 	{
-		hashTable = new LinkedList[11];
+		this.hashTable = new LinkedList[11];
 	}
 	
 	@SuppressWarnings("unchecked")
 	public HashTable(int capacity)
 	{
-		hashTable = new LinkedList[capacity];
+		this.hashTable = new LinkedList[capacity];
 	}
 	
+	public int getCapacity()
+	{
+		return capacity;
+	}
+	
+	public void setCapacity(int capacity)
+	{
+		if(capacity < this.capacity)
+		{
+			System.out.println("Capacity must be greater than " + this.capacity);
+		}
+		else
+		{
+			this.capacity = capacity;
+		}
+	}
 	private int hash(int key)
 	{
 		return divisionMethod(key);
+		//return myHash(key);
 	}
 	
 	private int divisionMethod(int key)
 	{
-		return key % m;
-	}
-	
-	/*private int multiplicationMethod(int data)Requires more research
-	{
-		return 
-	}*/
+		return key % this.m;
+	}	
 	
 	private int myHash(int key)
 	{
-		int num = key % m;
+		int num = key % this.m;
 		if(num%2 == 0)
 		{
 			return num % 19;
@@ -47,32 +58,82 @@ public class HashTable {
 		}
 	}
 	
-	public void put(int key, int data)
+/*	public void insert(int key, int data)
 	{
 		int index = hash(key);
-		hashTable[index].add(data);
-	}
+		this.hashTable[index].add(data);
+	}*/
 	
-	public int search(int data)
+	public void insert(Node n)
 	{
-		int index = hash(data);
-		for(int i = 0; i < hashTable[index].size(); i++)
+		int index = hash(n.getKey());
+		if(this.hashTable[index] == null)
 		{
-			if(hashTable[index].get(i) == data)
-			{
-				return hashTable[index].get(i);
-			}
+			LinkedList<Integer> chain = new LinkedList<Integer>();
+			chain.add(n.getData());
+			this.hashTable[index] = chain;
 		}
-		return 0;
+		else
+		{
+			this.hashTable[index].add(n.getData());
+		}
 	}
 	
-	public void delete()
+	public LinkedList<Integer> search(int key)
 	{
+		int index = hash(key);
+		if(this.hashTable[index] != null)
+		{
+			return this.hashTable[index];
+		}
+		return null;
+	}
+	
+	public Integer search(Node n)
+	{
+		int index = hash(n.getKey());
+		for(int i = 0; i < this.hashTable[index].size(); i++)
+		{
+			if(this.hashTable[index].get(i) == n.getData())
+			{
+				return this.hashTable[index].get(i);
+			}
+		}	
+		return null;
+	}
+	
+	public void delete(int key)
+	{
+		int index = hash(key);
+		this.hashTable[index] = null;
+	}
+	
+	public void delete(Node n)
+	{
+		int index = hash(n.getKey());
+		for(int i = 0; i < this.hashTable[index].size(); i++)
+		{
+			if(this.hashTable[index].get(i) == n.getData())
+			{
+				this.hashTable[index].remove(i);
+			}
+		}	
 		
 	}
 	
-	public int get()
+	public void display()
 	{
-		return 0;
+		for(int i = 0; i < hashTable.length; i++)
+		{
+			System.out.print(i + " ");
+			if(hashTable[i] != null)
+			{
+				for(int j = 0; j < hashTable[i].size(); j++)
+				{
+					System.out.print(hashTable[i].get(j) + " ");
+				}
+			}
+			System.out.println();
+		}
 	}
 }
