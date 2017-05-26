@@ -17,6 +17,9 @@ public class BinarySearchTree {
 	{
 		this.root = new Node(data);
 		this.point = new Node(data);
+		//test
+		int a = 5;
+		int b = 7;
 	}
 	
 	public Node search(int target)
