@@ -1,9 +1,10 @@
 package Objects;
+import java.util.*;
 
 public class Person {
 	private String firstName;
 	private String lastName;
-	private Book[] items;
+	private Stack<Book> books;
 	private int libraryId;
 	private double fees;
 	
@@ -14,12 +15,12 @@ public class Person {
 		this.libraryId = libraryId;
 	}
 	
-	public Person(String firstName, String lastName, int libraryId, Book[] items, double fees)
+	public Person(String firstName, String lastName, int libraryId, Stack<Book> books, double fees)
 	{
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.libraryId = libraryId;
-		this.items = items;
+		this.books = books;
 		this.fees = fees;
 	}
 	
@@ -33,9 +34,9 @@ public class Person {
 		return this.lastName;
 	}
 	
-	public Book[] getBooks()
+	public Stack<Book> getBooks()
 	{
-		return this.items;
+		return this.books;
 	}
 	
 	public int getLibraryId()
@@ -48,9 +49,9 @@ public class Person {
 		return this.fees;
 	}
 	
-	public void setBooks(Book[] items)
+	public void setBooks(Stack<Book> books)
 	{
-		this.items = items;
+		this.books = books;
 	}
 	
 	public void setLibraryId(int id)
@@ -66,22 +67,29 @@ public class Person {
 	private String printBooks()
 	{
 		String str = "";
-		if(this.items == null)
+		if(this.books == null)
 		{
 			return "Not checking out any books";
 		}
-		for(int i = 0; i < this.items.length; i++)
+		else
 		{
-			if(i == this.items.length - 1)
-			{
-				str += this.items[i];
-			}
-			else
-			{
-				str += this.items[i] + ", ";
-			}
+			@SuppressWarnings("unchecked")
+			Stack<Book> temp = (Stack<Book>) this.books.clone();
 			
+			for(int i = 0; i < this.books.size(); i++)
+			{
+				if(i == this.books.size() - 1)
+				{
+					str += temp.pop();
+				}
+				else
+				{
+					str += temp.pop() + ", ";
+				}
+				
+			}
 		}
+		
 		return str;
 	}
 	
@@ -90,6 +98,7 @@ public class Person {
 		return this.firstName + " " + this.lastName + "\n" +
 				"Books: " + printBooks() + "\n" +
 				"Library ID: " + this.libraryId + "\n" +
-				"Fees: $" + fees;  
+				"Fees: $" + Math.floor(fees * 100) / 100;
+		
 	}
 }

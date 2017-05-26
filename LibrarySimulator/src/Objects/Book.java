@@ -5,7 +5,7 @@ public class Book {
 	private String author;
 	private int id;
 	private Log log;
-	private boolean borrowed;
+	public boolean borrowed;
 	
 	public Book(String title, String author)
 	{
@@ -56,6 +56,11 @@ public class Book {
 	public void setLog(Log log)
 	{
 		this.log = log;
+	}
+	
+	public void borrow()
+	{
+		this.borrowed = true;
 	}
 	
 	public String toString()

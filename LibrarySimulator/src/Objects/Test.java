@@ -1,4 +1,5 @@
 package Objects;
+import java.util.*;
 
 public class Test {
 
@@ -11,9 +12,9 @@ public class Test {
 		
 		Book b1 = new Book("Brave New World", "Aldous Huxely");
 		Book b2 = new Book("Julius Caesar", "Shakespeare");
-		Book[] Books = new Book[2];
-		Books[0] = b1;
-		Books[1] = b2;
+		Stack<Book> Books = new Stack<Book>();
+		Books.push(b1);
+		Books.push(b2);
 		
 		double fees = 54.32;
 		
