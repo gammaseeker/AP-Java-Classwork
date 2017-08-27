@@ -51,6 +51,16 @@ public class TestCircleWithException {
 			catch (Exception ex) {
 				System.out.println("Exception in main");
 			}
+		try {
+				method3();
+				System.out.println("After the method call");
+			}
+			catch (RuntimeException ex) {
+				System.out.println("RuntimeException in main");
+			}
+			catch (Exception ex) {
+				System.out.println("Exception in main");
+			}
 	}
 	
 	public static void method() throws Exception {
@@ -64,6 +74,19 @@ public class TestCircleWithException {
 		}
 		catch (RuntimeException ex) {
 			System.out.println("RuntimeException in method2()");
+		}
+		catch (Exception ex) {
+			System.out.println("Exception in method()");
+		}
+	}
+	
+	static void method3() throws Exception {
+		try {
+			String s = "abc";
+			System.out.println(s.charAt(3));
+		}
+		catch (RuntimeException ex) {
+			System.out.println("RuntimeException in method()");
 		}
 		catch (Exception ex) {
 			System.out.println("Exception in method()");
