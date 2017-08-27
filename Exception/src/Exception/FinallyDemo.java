@@ -29,6 +29,7 @@ public class FinallyDemo {
 		finally{
 			System.out.println("Finally code executed");
 		}
+		System.out.println("This works right?");
 	
 		try{
 			method();
