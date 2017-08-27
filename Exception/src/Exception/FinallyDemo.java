@@ -1,6 +1,6 @@
 package Exception;
 
-public class TestCircleWithException {
+public class FinallyDemo {
 	public static void main(String[] args){
 		try{
 			CircleWithException c1 = new CircleWithException(5);
@@ -14,53 +14,53 @@ public class TestCircleWithException {
 		System.out.println("Number of objects created: " + CircleWithException.getNumberOfObjects());
 		
 		try {
-			int[] list = new int[10];
-			System.out.println("list[10] is " + list[10]);
-		}
-		catch (ArithmeticException ex) {
-			System.out.println("ArithmeticException");
-		}
-		catch (RuntimeException ex) {
-			System.out.println("RuntimeException");
-		}
-		catch (Exception ex) {
-			System.out.println("Exception");
-		}
-	
+				int[] list = new int[10];
+				System.out.println("list[10] is " + list[10]);
+			}
+			catch (ArithmeticException ex) {
+				System.out.println("ArithmeticException");
+			}
+			catch (RuntimeException ex) {
+				System.out.println("RuntimeException");
+			}
+			catch (Exception ex) {
+				System.out.println("Exception");
+			}
+		
 		try {
-			method();
-			System.out.println("After the method call");
-		}
-		catch (ArithmeticException ex) {
-			System.out.println("ArithmeticException");
-		}
-		catch (RuntimeException ex) {
-			System.out.println("RuntimeException");
-		}
-		catch (Exception e) {
-			System.out.println("Exception");
-		}
-	
+				method();
+				System.out.println("After the method call");
+			}
+			catch (ArithmeticException ex) {
+				System.out.println("ArithmeticException");
+			}
+			catch (RuntimeException ex) {
+				System.out.println("RuntimeException");
+			}
+			catch (Exception e) {
+				System.out.println("Exception");
+			}
+		
 		try {
-			method2();
-			System.out.println("After the method call");
-		}
-		catch (RuntimeException ex) {
-			System.out.println("RuntimeException in main");
-		}
-		catch (Exception ex) {
-			System.out.println("Exception in main");
-		}
+				method2();
+				System.out.println("After the method call");
+			}
+			catch (RuntimeException ex) {
+				System.out.println("RuntimeException in main");
+			}
+			catch (Exception ex) {
+				System.out.println("Exception in main");
+			}
 		try {
-			method3();
-			System.out.println("After the method call");
-		}
-		catch (RuntimeException ex) {
-			System.out.println("RuntimeException in main");
-		}
-		catch (Exception ex) {
-			System.out.println("Exception in main");
-		}
+				method3();
+				System.out.println("After the method call");
+			}
+			catch (RuntimeException ex) {
+				System.out.println("RuntimeException in main");
+			}
+			catch (Exception ex) {
+				System.out.println("Exception in main");
+			}
 	}
 	
 	public static void method() throws Exception {
