@@ -8,10 +8,22 @@ public class GuessingGame {
 		front();
 		game(scannerCall());
 	}
+	@SuppressWarnings("null")
 	public static int scannerCall(){
 		Scanner sc = new Scanner (System.in);
-		int input = sc.nextInt();
-		return input;
+		boolean continueInput = true;
+		do{
+			try{
+				int input = sc.nextInt();
+				return input;
+			}
+			catch(InputMismatchException ex){
+				System.out.println("Try again. (" + "Incorrect input: an integer is required)");
+				sc.nextLine();
+			}
+		}while(continueInput);
+		
+		return (Integer) null;
 	}
 	public static void front(){
 		System.out.println("Guessing Game ");
