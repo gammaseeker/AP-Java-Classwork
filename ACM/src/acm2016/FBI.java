@@ -7,6 +7,7 @@ public class FBI {
 
 	public static void main(String[] args) throws FileNotFoundException{
 		Scanner sc = new Scanner(new File("fbi.txt"));
+		//0123456789ACDEFHJKLMNPRTVWX
 		
 	}
 }
