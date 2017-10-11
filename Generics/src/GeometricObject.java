@@ -1,17 +1,18 @@
+import java.util.*;
 
 public abstract class GeometricObject {
 	private String color = "white";
 	private boolean filled;
-	private java.util.Date dateCreated;
+	private Date dateCreated;
 
 	/** Construct a default geometric object */
 	protected GeometricObject() {
-		dateCreated = new java.util.Date();
+		dateCreated = new Date();
 	}
 	
 	 /** Construct a geometric object with color and filled value */
 	 protected GeometricObject(String color, boolean filled) {
-		 dateCreated = new java.util.Date();
+		 dateCreated = new Date();
 		 this.color = color;
 		 this.filled = filled;
 	 }
@@ -37,7 +38,7 @@ public abstract class GeometricObject {
 	 }
 	 
 	 /** Get dateCreated */
-	 public java.util.Date getDateCreated() {
+	 public Date getDateCreated() {
 		 return dateCreated;
 	 }
 	 
