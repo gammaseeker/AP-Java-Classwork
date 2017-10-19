@@ -15,7 +15,7 @@ public class MultipleStageDemo extends Application {
 	 Stage stage = new Stage(); // Create a new stage
 	 stage.setTitle("Second Stage"); // Set the stage title
 	 // Set a scene with a button in the stage
-	 stage.setScene(new Scene(new Button("New Stage"), 100, 100));
+	 stage.setScene(new Scene(new Button("New Stage"), 200, 200));
 	 stage.show(); // Display the stage
 	 }
 	

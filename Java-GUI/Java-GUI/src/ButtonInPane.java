@@ -7,12 +7,13 @@ import javafx.scene.layout.StackPane;
 public class ButtonInPane extends Application{
 	@Override // Override the start method in the Application class
 	public void start(Stage primaryStage){
-		StackPane pane = new StackPane();
-		pane.getChildren().add(new Button("OK"));
+		//Create a scene and place a button in the scene
+		StackPane pane = new StackPane();// Stack Pane is format of the scene
+		pane.getChildren().add(new Button("OK"));//This is an ArrayList
 		Scene scene = new Scene(pane, 200, 50);
-		primaryStage.setTitle("Button in a pane");
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		primaryStage.setTitle("Button in a pane");//Set the stage title
+		primaryStage.setScene(scene);//Place the scene in the stage
+		primaryStage.show();//Display the stage
 	}
 	
 	public static void main(String[] args) {
