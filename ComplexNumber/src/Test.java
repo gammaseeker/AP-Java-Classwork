@@ -15,7 +15,7 @@ public class Test
 		System.out.println(myNum.add(myNum2));
 		System.out.println(myNum.subtract(myNum2));
 		System.out.println(myNum.multiply(myNum5));
-		System.out.println(myNum.divideBy(myNum5));
+		System.out.println("DIVIDE" + myNum.divideBy(myNum5));
 		System.out.println(myNum.getConjugate());
 		QuadraticEquation myEq = new QuadraticEquation(1, 2, 3);
 		QuadraticEquation myEq2 = new QuadraticEquation();

@@ -34,6 +34,9 @@ public class ComplexNumber
 	}
 	public String toString()
 	{
+		if(b < 0) {
+			return this.a + "-" + Math.abs(this.b) + "i";
+		}
 		return this.a + "+" + this.b + "i";
 	}
 	public ComplexNumber add(ComplexNumber other)
