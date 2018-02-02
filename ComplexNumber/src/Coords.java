@@ -92,12 +92,7 @@ public class Coords
 	}
 	public boolean equals(Coords otherPoint)
 	{
-		if(this.x == otherPoint.x && this.y == otherPoint.y)
-		{
-			return true;
-		}
-		return false;
-		//return (this.x == otherPoint.x && this.y == otherPoint.y);
+		return (this.x == otherPoint.x && this.y == otherPoint.y);
 	}
 	public double getSlopeOfLineSegment(Coords other)
 	{

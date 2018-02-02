@@ -58,9 +58,6 @@ public class ComplexNumber
 	{
 		double c = other.a;
 		double d = other.b;
-		/*ComplexNumber theConjugate = other.getConjugate();
-		ComplexNumber numerator = multiply(theConjugate);
-		ComplexNumber denominator = multiply(theConjugate);*/
 		return new ComplexNumber(((a * c + b * d)/(Math.pow(c, 2) + Math.pow(d,2))), ((b * c - a * d)/(Math.pow(c, 2) + Math.pow(d, 2))));
 	}
 	public ComplexNumber getConjugate()
