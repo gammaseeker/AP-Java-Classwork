@@ -1,4 +1,0 @@
-E:\APJava\Sept14\ComplexNumber\ComplexNumber.java
-E:\APJava\Sept14\ComplexNumber\Coords.java
-E:\APJava\Sept14\ComplexNumber\QuadraticEquation.java
-E:\APJava\Sept14\ComplexNumber\Test.java
